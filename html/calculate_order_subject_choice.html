@@ -76,7 +76,33 @@
             alt="image">
         </div>
 
-        <!-- {{ form.payment_months }} -->
+        <div class="calculate-matriculation__stage">
+          <label for="{{ form.payment_months.id_for_label }}">Период обучения (мес.)</label>
+  
+          <div class="calculate-matriculation__stage-content">
+            <div class="calculate-matriculation__stage-range">
+              <input type="range" name="{{ form.payment_months.name }}" value="1" step="1" min="1" max="9"
+                id="{{ form.payment_months.id_for_label}}" required>
+            </div>
+            <ul class="calculate-matriculation__stage-range-labels">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li class="calculate-matriculation__stage-range-labels__five-sale">4</li>
+              <li>5</li>
+              <li>6</li>
+              <li class="calculate-matriculation__stage-range-labels__seven-sale">7</li>
+              <li>8</li>
+              <li>9</li>
+            </ul>
+          </div>
+          <div class="calculate-matriculation__payment">
+            <span>%</span>
+            <span>При оплате обучения за 4-6 месяцев действует скидка 5%. При<br>
+              оплате за 7-9 месяцев действует скидка 7%
+            </span>
+          </div>
+        </div>
 
         <div class="calculate-matriculation__disability">
           <label for="{{ form.disability.id_for_label }}">

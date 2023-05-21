@@ -22,8 +22,8 @@
     data-price511={{ format.price511.amount }} data-options="{{ options }}">
   <div class="calculate-matriculation__title">
     <span>Тариф</span>
-    <h1>С зачислением</h1>
-    <p>Полное среднее образование с 1 по 11 класс с выдачей аттестата государственного образца</p>
+    <h1>Без зачисления</h1>
+    <p>Видеоуроки и сервисы по всем предметам</p>
   </div>
   <form action="" method="post">
     <div class="calculate-matriculation__form">
@@ -115,9 +115,9 @@
 
       <div class="calculate-matriculation__disability">
         <label>
-          <input type="checkbox" 
-            onclick="window.location.href = '../html/without-enroll.html'" {% else %} onclick="window.location.href = '../html/calculate_order.html'"
-            checked>
+          <input type="checkbox" {% if format.format_type=='with_enroll' %}
+            onclick="window.location.href = 'without-enroll'" {% else %} onclick="window.location.href = 'with-enroll'"
+            {% endif %} {% if format.format_type=='with_enroll' %} checked {% endif %}>
           Получить аттестат
         </label>
         <p>Образование с 1 по 11 класс с выдачей аттестата государственного образца</p>
