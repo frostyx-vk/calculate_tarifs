@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" type="text/css" href="../css/calculate_order.css">
+</head>
+<body>
+  
+</body>
+</html>
+
+
+<div class="calculate-matriculation__container">
+  <input type="hidden" id="prices-discounts" data-discounts="{{ discounts }}" data-price={{ format.price.amount }}
+         data-price511={{ format.price511.amount }} data-options="{{ options }}">
+  <div class="calculate-matriculation__title">
+    <span>Тариф</span>
+    <h1>С зачислением</h1>
+    <p>Полное среднее образование с 1 по 11 класс с выдачей аттестата государственного образца</p>
+  </div>
+  <form action="" method="post">
+    <div class="calculate-matriculation__form">
+
+      <div class="calculate-matriculation__tarif">
+        <label for="{{ form.education_format.id_for_label }}">Тариф</label>
+        {{ form.education_format }}
+      </div>
+      <div class="calculate-matriculation__shift-and-grade">
+        <div>
+          <label class="calculate-matriculation__shift-title" for="{{ form.shift.id_for_label }}">Смена</label>
+          <div class="calculate-matriculation__shift">
+            <div class="calculate-matriculation__shift-1">
+              <label>
+                <input type="radio" name="{{ form.shift.name }}" id="{{ form.shift.id_for_label }}_0"
+                       value="False" required checked>
+                <span></span>
+                <p>1 cмена</p>
+              </label>
+            </div>
+            <div class="calculate-matriculation__shift-2">
+              <label>
+                <input type="radio" name="{{ form.shift.name }}" id="{{ form.shift.id_for_label }}_1"
+                       value="True" required>
+                <span></span>
+                <p>2 cмена</p>
+              </label>
+              <div class="calculate-matriculation__shift-2-discount">%</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="calculate-matriculation__grade-title" for="{{ form.grade.id_for_label }}">Класс</label>
+          <div class="calculate-matriculation__grade">
+            <div class="calculate-matriculation__grade-1">
+              <label>
+                <input type="radio" name="{{ form.grade.name }}" id="{{ form.grade.id_for_label }}_0"
+                       value="0" required checked>
+                <span></span>
+                <p>1-4</p>
+              </label>
+            </div>
+            <div class="calculate-matriculation__grade-2">
+              <label>
+                <input type="radio" name="{{ form.grade.name }}" id="{{ form.grade.id_for_label }}_1"
+                       value="1" required>
+                <span></span>
+                <p>5-11</p>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calculate-matriculation__shift-and-grade-time">
+        <span>9:00 - 13:00<br>
+          МСК</span>
+        <span>14:00 - 18:00<br>
+          МСК</span>
+      </div>
+
+      <div class="calculate-matriculation__disability">
+        <label>
+          <input type="checkbox"
+                 {% if format.format_type == 'with_enroll' %}
+                 onclick="window.location.href = 'without-enroll'"
+                 {% else %}
+                 onclick="window.location.href = 'with-enroll'"
+                 {% endif %}
+                 {% if format.format_type == 'with_enroll'%} checked {% endif %}>
+          Получить аттестат
+        </label>
+        <p>Образование с 1 по 11 класс с выдачей аттестата государственного образца</p>
+      </div>
+
+      <div class="calculate-matriculation__disability">
+        <label for="{{ form.disability.id_for_label }}">
+          <input type="checkbox" name="{{ form.disability.name }}" id="{{ form.disability.id_for_label }}">
+          Наличие инвалидности
+        </label>
+        <p>При наличии документов, подтверждающих инвалидность,<br>предоставляется скидка 10%</p>
+      </div>
+
+      <div class="calculate-matriculation__result">
+        <p class="calculate-matriculation__result-children">Итоговая сумма (1 ребенок)</p>
+        <div class="calculate-matriculation__result-block">
+          <p class="calculate-matriculation__result-price"></p>
+          <span class="calculate-matriculation__result-price-line"></span>
+          <div>
+            <p class="calculate-matriculation__result-fullprice"></p>
+            <p class="calculate-matriculation__result-discount">Скидка: 0 ₽</p>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="calculate-matriculation__btn-next">Далее</button>
+    </div>
+
+    <div class="calculate-matriculation__dop-option">
+      <!-- {% include "edu/calculate_order_options.html" %} -->
+      <div class="calculate-matriculation__btn">
+        <button class="calculate-matriculation__btn-back" type="button" >Назад</button>
+        <button class="calculate-matriculation__btn-next" type="submit" >Далее</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+  <script type="text/javascript" src="../js/calculate_order.js"></script>
+  <script type="text/javascript" src="../js/calculate_order_options.js"></script>

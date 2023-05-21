@@ -1,0 +1,40 @@
+{{ formset.management_form }}
+
+<div class="calc-formset__title">
+  Дополнительные услуги
+</div>
+
+<div class="calc-formset__form">
+  {% for form in formset %}
+    <div class="calc-formset__form-container-wrapper">
+      <div class="calc-formset__form-container">
+        {{ form.choice.errors }}
+        {{ form.choice }}
+        {{ form.description }}
+        <div class="payment_months-wrapper">
+          {{ form.is_added_option }}
+          {{ form.price }}
+        </div>
+      </div>
+      <div class="calc-formset__result">
+        <span class="calc-formset__result-total">0 ₽</span>
+        <span class="calc-formset__result-month"></span>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="calc-formset__price">
+  <div class="calc-formset__price-block">
+    <span class="calc-formset__price-item">Цена за тариф</span>
+    <span class="calc-formset__price-cost"></span>
+  </div>
+  <div class="calc-formset__price-block">
+    <span class="calc-formset__price-item">Цена за услуги</span>
+    <span class="calc-formset__price-options">0 ₽</span>
+  </div>
+  <div class="calc-formset__price-block">
+    <span class="calc-formset__price-total">Итого к оплате</span>
+    <span class="calc-formset__price-result"></span>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% extends "account/base.html" %}
+
+{% load i18n static %}
+
+{% block title %}{% trans "Signup" %} | {{ block.super }}{% endblock %}
+
+{% block head_extra %}{{ block.super }}
+  {{ form.media.css }}
+  <link rel="stylesheet" type="text/css" href="{% static 'edu/css/calculate_order.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="calculate__phone-container">
+      <h1 class="calculate__phone-container-title">Введите код из смс</h1>
+      <span>Вам на телефон был отправлен код, введите его для подтверждения.</span>
+      <form id="signup_verify_form" method="post" action="">
+        {% csrf_token %}
+        {{ form }}
+        <span id="calc-phone-link">Отправить новый код через <span id="calc-phone-time"></span></span>
+        <a class="phone-link">Отправить новый код</a>
+        <div class="calculate-matriculation__btn">
+          <a class="calculate__phone__btn-back" href="{% url 'edu:phone-order' pk %}">Назад</a>
+          <button class="calculate__phone__btn-next" type="submit">Далее</button>
+        </div>
+      </form>
+  </div>
+{% endblock %}
+
+{% block body_extra %}{{ block.super }}
+  {{ form.media.js }}
+  <script type="text/javascript">
+    injectSVG('{% static 'account/img/illustrations/signup-verify-banner.svg' %}');
+  </script>
+  <script type="text/javascript" src="{% static 'edu/js/phone_verify.js' %}"></script>
+{% endblock %}

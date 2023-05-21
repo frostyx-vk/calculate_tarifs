@@ -1,0 +1,1009 @@
+/* style for calculate_order.html */
+/* stylelint-disable */
+.calculate-matriculation__container{
+    width: 560px;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 32px 48px;
+}
+.calculate-matriculation__title span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    color: #757575;
+}
+.calculate-matriculation__title h1{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 44px;
+    color: #3F51B5;
+    margin: 0;
+    margin-top: 8px;
+}
+.calculate-matriculation__title p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #424242;
+    margin: 0;
+    margin-top: 6px;
+}
+
+.calculate-matriculation__tarif{
+    display: none;
+}
+
+.calculate-matriculation__shift-and-grade{
+    display: flex;
+    gap: 140px;
+    margin-top: 32px;
+}
+.calculate-matriculation__shift{
+    display: flex;
+    margin-top: 16px;
+}
+.calculate-matriculation__shift-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+}
+.calculate-matriculation__shift-1 input[type="radio"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: 1;
+}
+.calculate-matriculation__shift-1 span{
+    position: relative;
+    cursor: pointer;
+}
+.calculate-matriculation__shift-1 span::before{
+    content: "";
+	position: absolute;
+    width: 100px;
+    height: 36px;
+	left: 0;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px 0px 0px 8px;
+    z-index: 1;
+}
+.calculate-matriculation__shift-1 span::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 36px;
+    background: #E8EAF6;
+    border: 1px solid #5C6BC0;
+    border-radius: 8px 0px 0px 8px;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+.calculate-matriculation__shift-1 label p{
+    position: relative;
+    color: #757575;
+    margin: 0;
+    left: 20px;
+    top: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+.calculate-matriculation__shift-1 input[type="radio"]:checked + span::after{
+    opacity: 1;
+    z-index: 1;
+}
+.calculate-matriculation__shift-1-time{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    color: #757575;
+    position: relative;
+    margin: 0;
+    top: 26px;
+    left: 20px;
+}
+
+.calculate-matriculation__shift-2{
+    position: relative;
+}
+.calculate-matriculation__shift-2 input[type="radio"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.calculate-matriculation__shift-2 span{
+    position: relative;
+    left: 40px;
+    cursor: pointer;
+}
+.calculate-matriculation__shift-2 span::before{
+    content: "";
+	position: absolute;
+    width: 100px;
+    height: 36px;
+    left: 2.6px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 0px 8px 8px 0px;
+}
+.calculate-matriculation__shift-2 span::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 36px;
+    background: #E8EAF6;
+    border: 1px solid #5C6BC0;
+    border-radius: 0px 8px 8px 0px;
+    left: 2.6px;
+    opacity: 0;
+}
+.calculate-matriculation__shift-2 label p{
+    position: relative;
+    color: #757575;
+    margin: 0;
+    left: 60px;
+    top: 10px;
+    cursor: pointer;
+}
+.calculate-matriculation__shift-2 input[type="radio"]:checked + span::after{
+    opacity: 1;
+}
+.calculate-matriculation__shift-2-time{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    color: #757575;
+    position: relative;
+    margin: 0;
+    top: 26px;
+    left: 60px;
+}
+.calculate-matriculation__shift-2-discount{
+    background: #3F51B5;
+    border-radius: 24px;
+    color: #FFFFFF;
+    padding: 4px 8px;
+    position: absolute;
+    top: -14px;
+    right: -98px;
+}
+
+
+.calculate-matriculation__grade{
+    display: flex;
+    margin-top: 16px;
+}
+.calculate-matriculation__grade-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+}
+.calculate-matriculation__grade-1 input[type="radio"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.calculate-matriculation__grade-1 span{
+    position: relative;
+    cursor: pointer;
+}
+.calculate-matriculation__grade-1 span::before{
+    content: "";
+	position: absolute;
+    width: 100px;
+    height: 36px;
+	left: 0;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px 0px 0px 8px;
+}
+.calculate-matriculation__grade-1 span::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 36px;
+    background: #E8EAF6;
+    border: 1px solid #5C6BC0;
+    border-radius: 8px 0px 0px 8px;
+    left: 0;
+    opacity: 0;
+}
+.calculate-matriculation__grade-1 label p{
+    position: relative;
+    color: #757575;
+    margin: 0;
+    left: 40px;
+    top: 10px;
+    cursor: pointer;
+}
+.calculate-matriculation__grade-1 input[type="radio"]:checked + span::after{
+    opacity: 1;
+}
+.calculate-matriculation__shift-and-grade-time{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    color: #757575;
+    position: relative;
+    margin: 0;
+    top: 26px;
+    left: 20px;
+    display: flex;
+    gap: 40px;
+    text-align: center;
+}
+
+.calculate-matriculation__grade-2 input[type="radio"]{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.calculate-matriculation__grade-2 span{
+    position: relative;
+    left: 77px;
+    cursor: pointer;
+}
+.calculate-matriculation__grade-2 span::before{
+    content: "";
+	position: absolute;
+    width: 100px;
+    height: 36px;
+    left: 2.6px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 0px 8px 8px 0px;
+}
+.calculate-matriculation__grade-2 span::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 36px;
+    background: #E8EAF6;
+    border: 1px solid #5C6BC0;
+    border-radius: 0px 8px 8px 0px;
+    left: 2.6px;
+    opacity: 0;
+}
+.calculate-matriculation__grade-2 label p{
+    position: relative;
+    color: #757575;
+    margin: 0;
+    left: 110px;
+    top: 10px;
+    cursor: pointer;
+}
+.calculate-matriculation__grade-2 input[type="radio"]:checked + span::after{
+    opacity: 1;
+}
+.calculate-matriculation__grade-2-time{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    color: #757575;
+    position: relative;
+    margin: 0;
+    top: 26px;
+    left: 60px;
+}
+
+
+.calculate-matriculation__stage{
+    margin-top: 52px;
+}
+.calculate-matriculation__stage label{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+}
+
+
+.calculate-matriculation__disability{
+    margin-top: 32px;
+    position: relative;
+}
+.calculate-matriculation__disability label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.calculate-matriculation__disability p{
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #757575;
+}
+.calculate-matriculation__disability input[type="checkbox"], .payment_months-wrapper input[type="checkbox"]{
+    width: 34px;
+    height: 14px;
+    -webkit-appearance: none;
+    outline: none;
+    background: #EEEEEE;
+    border-radius: 7px;
+    transition: .5s;
+    cursor: pointer;
+}
+.calculate-matriculation__disability input:checked[type="checkbox"], .payment_months-wrapper input:checked[type="checkbox"]{
+    background: rgba(63, 81, 181, 0.38);
+}
+.calculate-matriculation__disability input[type="checkbox"]::before, .payment_months-wrapper input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background: #9E9E9E;
+    transition: .5s;
+    transform: scale(1.1 );
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+.calculate-matriculation__disability input:checked[type="checkbox"]::before, .payment_months-wrapper input:checked[type="checkbox"]::before{
+    left: 20px;
+    background: #3F51B5;
+}
+
+
+.calculate-matriculation__stage-content {
+    display: flex;
+    gap: 10px;
+    margin-top: 42px;
+    flex-direction: column;
+}
+.calculate-matriculation__stage-range {
+    margin: 10px;
+    position: relative;
+    width: calc(100% - 15px);
+    height: 2px;
+    background: #E8EAF6;
+}
+.calculate-matriculation__stage-range input {
+    width: 100%;
+    position: absolute;
+    height: 0;
+    -webkit-appearance: none;
+    z-index: 1;
+    cursor: pointer;
+    accent-color: #3F51B5;
+}
+.calculate-matriculation__stage-range-labels {
+    margin: 0 15px;
+    width: calc(100% - 20px);
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.calculate-matriculation__stage-range-labels li {
+    position: relative;
+    text-align: center;
+    color: #b2b2b2;
+    font-size: 14px;
+}
+.calculate-matriculation__stage-range-labels li::before {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    content: "";
+    margin: 0 auto;
+    width: 6px;
+    height: 6px;
+    background: #E8EAF6;
+    border-radius: 50%;
+}
+.calculate-matriculation__stage-range-labels__five-sale:after {
+    position: absolute;
+    content: "5%";
+    background: #E8F5E9;
+    color: #4CAF50;
+    border-radius: 4px;
+    padding: 4px 6px;
+    top: -60px;
+    left: -10px;
+}
+.calculate-matriculation__stage-range-labels__seven-sale:after {
+    position: absolute;
+    content: "7%";
+    background: #E8F5E9;
+    color: #4CAF50;
+    border-radius: 4px;
+    padding: 4px 6px;
+    top: -60px;
+    left: -10px;
+}
+
+
+.calculate-matriculation__payment{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 24px;
+}
+.calculate-matriculation__payment span:nth-child(1){
+    background: #E8F5E9;
+    border-radius: 24px;
+    color: #4CAF50;
+    padding: 4px 8px;
+    height: 100%;
+}
+.calculate-matriculation__payment span:nth-child(2){
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #616161;
+}
+
+
+.calculate-matriculation__result{
+    margin-top: 32px;
+}
+.calculate-matriculation__result-children{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #757575;
+    margin: 0;
+}
+.calculate-matriculation__result-block{
+    display: flex;
+    margin-top: 14px;
+}
+.calculate-matriculation__result-price{
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 44px;
+    color: #3F51B5;
+    margin: 0;
+}
+.calculate-matriculation__result-block span{
+    width: 1px;
+    height: 48px;
+    background: #E0E0E0;
+    margin-left: 16px;
+}
+.calculate-matriculation__result-fullprice {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #9E9E9E;
+    margin-left: 24px;
+}
+.calculate-matriculation__result-discount {
+    margin: 0;
+    margin-left: 16px;
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #9E9E9E;
+}
+
+
+.calculate-matriculation__btn-hidden{
+    margin-top: 34px;
+    width: 100%;
+    height: 40px;
+    background: #EEEEEE;
+    border-radius: 8px;
+    color: #9E9E9E;
+    border: 1px solid #3F51B5;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
+}
+.calculate-matriculation__btn-next{
+    margin-top: 34px;
+    width: 100%;
+    height: 40px;
+    background: #3F51B5;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.calculate-matriculation__btn-back{
+    margin-top: 34px;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    color: #3F51B5;
+    border: 1px solid #3F51B5;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.calculate-matriculation__btn{
+    display: flex;
+    gap: 16px;
+}
+.calculate-matriculation__btn a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #3F51B5;
+}
+
+
+/* style for calculate_order_subject_choice.html */
+.calculate-matriculation__container-subject{
+    width: 560px;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 32px 48px;
+}
+.calculate-subjects__number{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+    margin: 32px 0 24px 0;
+}
+.calculate-matriculation__form .mdc-select--outlined .mdc-select__anchor{
+    height: 48px;
+    color: #9E9E9E;
+    margin: 12px 0;
+}
+.calculate-subjects__subject{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #424242;
+}
+.mdc-button__icon{
+    fill: #3F51B5;
+    top: 6px;
+    right: 192px;
+    position: absolute;
+}
+.calculate-subjects__add-subject{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: #3F51B5;
+    height: 40px;
+    padding: 12px 0;
+    width: 100%;
+    border: 1px solid #3F51B5;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    position: relative;
+}
+.calculate-subjects__banner {
+    margin-top: 16px;
+    height: 250px;
+    background: #E8EAF6;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    display: none;
+}
+.calculate-subjects__banner-enroll {
+    margin: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 0.25px;
+    color: #3F51B5;
+}
+.calculate-subjects__banner-enroll span{
+    background: #FFC107;
+    border-radius: 10px;
+    width: 90px;
+    height: 32px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 22px;
+    color: #FFFFFF;
+    transform: rotate(-4deg);
+    padding: 5px 12px;
+    display: inline-block;
+    position: absolute;
+    margin-left: 10px;
+    z-index: 1;
+}
+.calculate-subjects__banner-price {
+    margin: 0;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    color: #424242;
+}
+.calculate-subjects__banner-text {
+    margin: 0;
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #424242;
+    z-index: 1;
+    position: relative;
+}
+.calculate-subjects__banner-btn {
+    margin-top: 20px;
+    background: #3F51B5;
+    border-radius: 8px;
+    border: none;
+    width: 142px;
+    color: #FFFFFF;
+    padding: 12px 40px;
+    display: block;
+    text-decoration: none;
+}
+.calculate-subjects__banner img{
+    top: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 8px;
+}
+.subjects__line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.subjects__line svg{
+    fill: #EF9A9A;
+    cursor: pointer;
+}
+#subjects__two{
+    display: none;
+}
+#subjects__three{
+    display: none;
+}
+
+
+.calculate-matriculation__dop-option{
+    display: none;
+}
+.proba{
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    z-index: -1;
+    position: absolute;
+}
+
+
+/* style for calculate_order_options.html */
+.calc-formset__title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #212121;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+.calc-formset__form .mdc-select{
+    margin-bottom: 20px;
+    margin-top: 16px;
+    display: block;
+}
+.calc-formset__form .mdc-select__anchor{
+    height: 40px;
+}
+.calc-formset__price{
+    background: #F5F5F5;
+    border-radius: 8px;
+    padding: 12px 16px 0 16px;
+    margin-top: 20px;
+}
+.calc-formset__price-block {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+.calc-formset__price-item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #9E9E9E;
+}
+.calc-formset__price-cost, .calc-formset__price-options {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    color: #7986CB;
+}
+.calc-formset__price-total {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #616161;
+}
+.calc-formset__price-result {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #3F51B5;
+}
+.calc-formset__form label{
+    display: none;
+}
+.calc-formset__form .calc-formset__option-title{
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    appearance: none;
+    margin: 0;
+    left: 16px;
+    position: relative;
+}
+.calc-formset__form-container-wrapper{
+    border-bottom: 1px solid #E0E0E0;
+}
+.calc-formset__result{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.calc-formset__result-total{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+}
+.calc-formset__result-month{
+    color: #3F51B5;
+    background: #E8EAF6;
+    border-radius: 14px;
+}
+#calc__description{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #616161;
+    margin: 0;
+    margin-bottom: 0px;
+    margin-top: 18px;
+}
+.calc__total{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #616161;
+    right: 0;
+    position: absolute;
+}
+#calc__price{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #9E9E9E;
+}
+
+.payment_months-wrapper{
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    position: relative;
+}
+.payment_months-wrapper input[type="checkbox"]{
+    width: 34px;
+    height: 14px;
+    -webkit-appearance: none;
+    outline: none;
+    background: #EEEEEE;
+    border-radius: 7px;
+    transition: .5s;
+
+}
+.payment_months-wrapper input:checked[type="checkbox"]{
+    background: rgba(63, 81, 181, 0.38);
+}
+.payment_months-wrapper input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    left: 0;
+    background: #9E9E9E;
+    transition: .5s;
+    transform: scale(1.1 );
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+.payment_months-wrapper input:checked[type="checkbox"]::before{
+    left: 20px;
+    background: #3F51B5;
+}
+
+/* style for phone_order.html */
+.calculate__phone-container{
+    width: 560px;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px 48px;
+    margin-top: 100px;
+}
+.calculate__phone-container-title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #212121;
+    margin: 0;
+    margin-bottom: 32px;
+}
+.calculate__phone-container label[for="id_phone"]{
+    display: none;
+}
+.calculate__phone__btn-hidden{
+    width: 100%;
+    height: 40px;
+    background: #EEEEEE;
+    border-radius: 8px;
+    color: #9E9E9E;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    cursor: pointer;
+}
+.calculate__phone__btn-back {
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    color: #3F51B5;
+    border: 1px solid #3F51B5;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.calculate__phone__btn-back a{
+    text-decoration: none;
+    color: #3F51B5;
+    cursor: pointer;
+}
+.calculate__phone__btn-next {
+    width: 100%;
+    height: 40px;
+    background: #3F51B5;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.calculate__phone-container span{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #757575;
+}
+#token{
+    margin: 10px 0 0 0;
+}
+
+/* style for disability_docs.html */
+.calculate-disability__container{
+    width: 560px;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 32px 48px;
+}
+.calculate-disability__container-title{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #212121;
+    margin-bottom: 8px;
+}
+.calculate-disability__container span{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #424242;
+    margin-bottom: 8px;
+}
+.calculate-disability__container p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #757575;
+    margin-bottom: 8px;
+}
+
+
+/* style for phone_verify.html */
+#calc-phone-link{
+    display: block;
+    margin-bottom: 30px;
+}
+.phone-link{
+    color: #3F51B5;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    display: none;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.dragable-uploader-widget__file-info p{
+    color: #3F51B5;
+}
+
+
+
+
+
+.dragable-uploader-widget__remove-btn{
+    z-index: 1;
+}

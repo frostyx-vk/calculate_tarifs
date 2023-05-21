@@ -1,0 +1,26 @@
+{% extends "layouts/isle.html" %}
+
+{% load replace_underscore static i18n %}
+
+{% block head_extra %}{{ block.super }}
+{{ form.media.css }}
+<link rel="stylesheet" type="text/css" href="{% static 'edu/css/calculate_order.css' %}">
+{% endblock %}
+
+{% block head %}Подписка | {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div class="calculate__phone-container">
+  <p class="calculate__phone-container-title">Подтверждение номера</p>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="calculate-matriculation__btn">
+      <a class="calculate__phone__btn-back" href="{% url 'edu:calculate-user-education-format' format_type|replace_underscore %}">Назад</a>
+      <button class="calculate__phone__btn-next" type="submit">Далее</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
