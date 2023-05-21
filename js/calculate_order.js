@@ -41,13 +41,11 @@ let basePrice;
 if (window.location.pathname.split('/').pop() === 'calculate_order.html') {
   basePrice = '8000';
   calcWithEnrollTotalPriceWithDiscount.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
-  // calcWithEnrollTotalPriceWithoutDiscount.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
-  // calculateTotalPriceBlock.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
+  calcWithEnrollTotalPriceWithoutDiscount.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
 } else if (window.location.pathname.split('/').pop() === 'without-enroll.html') {
   basePrice = '7000';
   calcWithEnrollTotalPriceWithDiscount.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
-  // calcWithEnrollTotalPriceWithoutDiscount.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
-  // calculateTotalPriceBlock.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
+  calcWithEnrollTotalPriceWithoutDiscount.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
 }
 
 // calcTotalPriceFormset.innerText = formatter.format(Math.round(basePrice)) + ' ₽';
@@ -66,6 +64,18 @@ const inputRadioGradeOne = document.querySelector('#id_grade_0');
 const inputRadioGradeTwo = document.querySelector('#id_grade_1');
 inputRadioGradeOne.dataset.value = 1;
 inputRadioGradeTwo.dataset.value = 1.1;
+
+// кнопка аттестата
+const credential = document.querySelector('#credential');
+
+credential.addEventListener('input', function(){
+  if (credential.checked) {
+    window.location.href = '../html/calculate_order.html'
+  };
+  if (credential.checked === false) {
+    window.location.href = '../html/without-enroll.html'
+  }
+})
 
 // кнопка нивалидности
 const inputCheckboxDisability = document.querySelector('#id_disability');
@@ -104,23 +114,23 @@ function calculateWithEnrollWithDiscount() {
   // calcTotalPriceFormset.innerText = calcWithEnrollTotalPriceWithDiscount.innerText;
 };
 
-// function calculateWithEnrollWithoutDiscount() {
-//   let totalPriceWithoutDiscount = basePrice * parseInt(inputRangeWithEnroll.value);
+function calculateWithEnrollWithoutDiscount() {
+  let totalPriceWithoutDiscount = basePrice * parseInt(inputRangeWithEnroll.value);
 
-//   for (let i = 1; i < inputsRadioGrade.length; i++) {
-//     if (inputsRadioGrade[1].checked) {
-//       totalPriceWithoutDiscount = totalPriceWithoutDiscount + (markupForGrade * parseInt(inputRangeWithEnroll.value));
-//     };
-//   };
+  for (const inputRadioGrade of inputsRadioGrade) {
+    if (inputRadioGrade.checked) {
+      totalPriceWithoutDiscount = totalPriceWithoutDiscount * inputRadioGrade.dataset.value;
+    };
+  };
 
-//   calcWithEnrollTotalPriceWithoutDiscount.innerText = formatter.format(totalPriceWithoutDiscount) + ' ₽';
-// };
+  calcWithEnrollTotalPriceWithoutDiscount.innerText = formatter.format(totalPriceWithoutDiscount) + ' ₽';
+};
 
-// function calculateWithEnrollDiscount() {
-//   const totalPriceDiscount = calcWithEnrollTotalPriceWithoutDiscount.innerText.replace(/\D/g, '') - calcWithEnrollTotalPriceWithDiscount.innerText.replace(/\D/g, '');
+function calculateWithEnrollDiscount() {
+  const totalPriceDiscount = calcWithEnrollTotalPriceWithoutDiscount.innerText.replace(/\D/g, '') - calcWithEnrollTotalPriceWithDiscount.innerText.replace(/\D/g, '');
 
-//   calcWithEnrollTotalPriceDiscount.innerText = 'Скидка: ' + formatter.format(totalPriceDiscount) + ' ₽';
-// };
+  calcWithEnrollTotalPriceDiscount.innerText = 'Скидка: ' + formatter.format(totalPriceDiscount) + ' ₽';
+};
 
 // расчет услуг
 const formsetOptionsContainers = document.querySelectorAll('.payment_months-wrapper input');
@@ -128,62 +138,62 @@ const formsetOptionsContainers = document.querySelectorAll('.payment_months-wrap
 let optionTotalPrice = 0;
 let totalResultOptionsPrice;
 
-function calculateWithEnrollOptions() {
-  for (const formsetOptionContainer of formsetOptionsContainers) {
-    if (formsetOptionContainer.checked) {
-      const container = formsetOptionContainer.closest('.calc-formset__form-container-wrapper');
-      const calcPrice = container?.querySelector('#calc__price');
-      const thatCalcOptionsTotalPrice = container?.querySelector('.calc-formset__result-total');
-      const thatCalcOptionsMonth = container?.querySelector('.calc-formset__result-month');
-      const thatOptionPrice = parseInt(calcPrice.innerText.replace(/\s+/g, ''));
+// function calculateWithEnrollOptions() {
+//   for (const formsetOptionContainer of formsetOptionsContainers) {
+//     if (formsetOptionContainer.checked) {
+//       const container = formsetOptionContainer.closest('.calc-formset__form-container-wrapper');
+//       const calcPrice = container?.querySelector('#calc__price');
+//       const thatCalcOptionsTotalPrice = container?.querySelector('.calc-formset__result-total');
+//       const thatCalcOptionsMonth = container?.querySelector('.calc-formset__result-month');
+//       const thatOptionPrice = parseInt(calcPrice.innerText.replace(/\s+/g, ''));
 
-      optionTotalPrice = thatOptionPrice * parseInt(inputRangeWithEnroll.value);
-      thatCalcOptionsTotalPrice.innerText = formatter.format(optionTotalPrice) + ' ₽';
+//       optionTotalPrice = thatOptionPrice * parseInt(inputRangeWithEnroll.value);
+//       thatCalcOptionsTotalPrice.innerText = formatter.format(optionTotalPrice) + ' ₽';
 
-      const month = parseInt(inputRangeWithEnroll.value);
-      if (month === 1) {
-        thatCalcOptionsMonth.style.padding = '4px 12px';
-        thatCalcOptionsMonth.innerText = parseInt(inputRangeWithEnroll.value) + ' месяц';
-      } else if (month === 2 || month === 3 || month === 4) {
-        thatCalcOptionsMonth.style.padding = '4px 12px';
-        thatCalcOptionsMonth.innerText = parseInt(inputRangeWithEnroll.value) + ' месяца';
-      } else if (month === 5 || month === 6 || month === 7 || month === 8 || month === 9) {
-        thatCalcOptionsMonth.style.padding = '4px 12px';
-        thatCalcOptionsMonth.innerText = parseInt(inputRangeWithEnroll.value) + ' месяцев';
-      };
-    };
-    if (formsetOptionContainer.checked === false) {
-      const container = formsetOptionContainer.closest('.calc-formset__form-container-wrapper');
-      const thatCalcOptionsTotalPrice = container?.querySelector('.calc-formset__result-total');
-      const thatCalcOptionsMonth = container?.querySelector('.calc-formset__result-month');
+//       const month = parseInt(inputRangeWithEnroll.value);
+//       if (month === 1) {
+//         thatCalcOptionsMonth.style.padding = '4px 12px';
+//         thatCalcOptionsMonth.innerText = parseInt(inputRangeWithEnroll.value) + ' месяц';
+//       } else if (month === 2 || month === 3 || month === 4) {
+//         thatCalcOptionsMonth.style.padding = '4px 12px';
+//         thatCalcOptionsMonth.innerText = parseInt(inputRangeWithEnroll.value) + ' месяца';
+//       } else if (month === 5 || month === 6 || month === 7 || month === 8 || month === 9) {
+//         thatCalcOptionsMonth.style.padding = '4px 12px';
+//         thatCalcOptionsMonth.innerText = parseInt(inputRangeWithEnroll.value) + ' месяцев';
+//       };
+//     };
+//     if (formsetOptionContainer.checked === false) {
+//       const container = formsetOptionContainer.closest('.calc-formset__form-container-wrapper');
+//       const thatCalcOptionsTotalPrice = container?.querySelector('.calc-formset__result-total');
+//       const thatCalcOptionsMonth = container?.querySelector('.calc-formset__result-month');
 
-      optionTotalPrice = 0;
-      thatCalcOptionsTotalPrice.innerText = `${optionTotalPrice} ₽`;
-      thatCalcOptionsMonth.innerText = '';
-      thatCalcOptionsMonth.style.padding = '0';
-    }
-  };
+//       optionTotalPrice = 0;
+//       thatCalcOptionsTotalPrice.innerText = `${optionTotalPrice} ₽`;
+//       thatCalcOptionsMonth.innerText = '';
+//       thatCalcOptionsMonth.style.padding = '0';
+//     }
+//   };
 
-  // вывод общей цены за услуги
-  const allCalcOptionsTotalPrice = [...document.querySelectorAll('.calc-formset__result-total')];
-  totalResultOptionsPrice = allCalcOptionsTotalPrice.reduce((partialSum, a) => partialSum + parseInt(a.innerText.replace(/\s+/g, '')), 0);
+//   // вывод общей цены за услуги
+//   const allCalcOptionsTotalPrice = [...document.querySelectorAll('.calc-formset__result-total')];
+//   totalResultOptionsPrice = allCalcOptionsTotalPrice.reduce((partialSum, a) => partialSum + parseInt(a.innerText.replace(/\s+/g, '')), 0);
 
-  const calcTotalPriceOptioons = document.querySelector('.calc-formset__price-options');
-  // calcTotalPriceOptioons.innerText = formatter.format(totalResultOptionsPrice) + ' ₽';
-};
+//   const calcTotalPriceOptioons = document.querySelector('.calc-formset__price-options');
+//   // calcTotalPriceOptioons.innerText = formatter.format(totalResultOptionsPrice) + ' ₽';
+// };
 
-function calculateTotalPrice() {
-  const calculateTotalPrice = totalPriceTarif + totalResultOptionsPrice;
+// function calculateTotalPrice() {
+//   const calculateTotalPrice = totalPriceTarif + totalResultOptionsPrice;
 
-  // calculateTotalPriceBlock.innerText = formatter.format(calculateTotalPrice) + ' ₽';
-};
+//   calculateTotalPriceBlock.innerText = formatter.format(calculateTotalPrice) + ' ₽';
+// };
 
 for (const input of inputsWithEnroll) {
   input.addEventListener('input', function() {
     calculateWithEnrollWithDiscount();
-    // calculateWithEnrollWithoutDiscount();
-    // calculateWithEnrollDiscount();
-    calculateWithEnrollOptions();
-    calculateTotalPrice();
+    calculateWithEnrollWithoutDiscount();
+    calculateWithEnrollDiscount();
+    // calculateWithEnrollOptions();
+    // calculateTotalPrice();
   });
 };

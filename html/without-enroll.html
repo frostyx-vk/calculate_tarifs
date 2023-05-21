@@ -38,7 +38,7 @@
           <div class="calculate-matriculation__shift">
             <div class="calculate-matriculation__shift-1">
               <label>
-                <input type="radio" name="{{ form.shift.name }}" id="{{ form.shift.id_for_label }}_0" value="False"
+                <input type="radio" name="shift" id="id_shift_0" value="False"
                   required checked>
                 <span></span>
                 <p>1 cмена</p>
@@ -46,7 +46,7 @@
             </div>
             <div class="calculate-matriculation__shift-2">
               <label>
-                <input type="radio" name="{{ form.shift.name }}" id="{{ form.shift.id_for_label }}_1" value="True"
+                <input type="radio" name="shift" id="id_shift_1" value="True"
                   required>
                 <span></span>
                 <p>2 cмена</p>
@@ -61,7 +61,7 @@
           <div class="calculate-matriculation__grade">
             <div class="calculate-matriculation__grade-1">
               <label>
-                <input type="radio" name="{{ form.grade.name }}" id="{{ form.grade.id_for_label }}_0" value="0" required
+                <input type="radio" name="grade" id="id_grade_0" value="0" required
                   checked>
                 <span></span>
                 <p>1-4</p>
@@ -69,7 +69,7 @@
             </div>
             <div class="calculate-matriculation__grade-2">
               <label>
-                <input type="radio" name="{{ form.grade.name }}" id="{{ form.grade.id_for_label }}_1" value="1"
+                <input type="radio" name="grade" id="id_grade_1" value="1"
                   required>
                 <span></span>
                 <p>5-11</p>
@@ -91,7 +91,7 @@
         <div class="calculate-matriculation__stage-content">
           <div class="calculate-matriculation__stage-range">
             <input type="range" name="{{ form.payment_months.name }}" value="1" step="1" min="1" max="9"
-              id="{{ form.payment_months.id_for_label}}" required>
+              id="id_payment_months" required>
           </div>
           <ul class="calculate-matriculation__stage-range-labels">
             <li>1</li>
@@ -115,9 +115,7 @@
 
       <div class="calculate-matriculation__disability">
         <label>
-          <input type="checkbox" {% if format.format_type=='with_enroll' %}
-            onclick="window.location.href = 'without-enroll'" {% else %} onclick="window.location.href = 'with-enroll'"
-            {% endif %} {% if format.format_type=='with_enroll' %} checked {% endif %}>
+          <input type="checkbox" id="credential">
           Получить аттестат
         </label>
         <p>Образование с 1 по 11 класс с выдачей аттестата государственного образца</p>
@@ -125,7 +123,7 @@
 
       <div class="calculate-matriculation__disability">
         <label for="{{ form.disability.id_for_label }}">
-          <input type="checkbox" name="{{ form.disability.name }}" id="{{ form.disability.id_for_label }}">
+          <input type="checkbox" name="{{ form.disability.name }}" id="id_disability">
           Наличие инвалидности
         </label>
         <p>При наличии документов, подтверждающих инвалидность,<br>предоставляется скидка 10%</p>
@@ -137,7 +135,7 @@
           <p class="calculate-matriculation__result-price"></p>
           <span class="calculate-matriculation__result-price-line"></span>
           <div>
-            <p class="calculate-matriculation__result-fullprice"></p>
+            <p class="calculate-matriculation__result-fullprice">0 ₽</p>
             <p class="calculate-matriculation__result-discount">Скидка: 0 ₽</p>
           </div>
         </div>
