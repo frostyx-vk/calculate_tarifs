@@ -1,5 +1,16 @@
 /* style for calculate_order.html */
 /* stylelint-disable */
+body{
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .calculate-matriculation__container{
     width: 560px;
     height: 100%;
@@ -154,7 +165,7 @@
     position: relative;
     color: #757575;
     margin: 0;
-    left: 60px;
+    left: 70px;
     top: 10px;
     cursor: pointer;
 }
