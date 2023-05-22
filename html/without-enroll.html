@@ -145,7 +145,66 @@
     </div>
 
     <div class="calculate-matriculation__dop-option">
-      <!-- {% include "edu/calculate_order_options.html" %} -->
+
+      <div class="calc-formset__form">
+
+        <div class="calc-formset__form-container-wrapper">
+          <div class="calc-formset__form-container">
+
+            <input type="hidden" name="options-0-choice" value="6">
+            <div class="payment_months-wrapper">
+              <input type="checkbox" name="options-0-is_added_option" id="id_options-0-is_added_option">
+              <div class="calc-formset__option-title">Психолог</div>
+              <div class="calc__total"><span id="calc__price">2000,00 ₽</span></div>
+            </div>
+            <p id="calc__description"></p>
+            <p>Индивидуальная помощь психолога</p>
+            <p></p>
+
+          </div>
+          <div class="calc-formset__result">
+            <span class="calc-formset__result-total">0 ₽</span>
+            <span class="calc-formset__result-month"></span>
+          </div>
+        </div>
+
+        <div class="calc-formset__form-container-wrapper">
+          <div class="calc-formset__form-container">
+
+            <input type="hidden" name="options-1-choice" value="7">
+            <div class="payment_months-wrapper">
+              <input type="checkbox" name="options-1-is_added_option" id="id_options-1-is_added_option">
+              <div class="calc-formset__option-title">Кружок "Очумелые ручки"</div>
+              <div class="calc__total"><span id="calc__price">3000,00 ₽</span></div>
+            </div>
+            <p id="calc__description"></p>
+            <p>Ведущим разделом программы является «Изготовление игрушек-сувениров»</p>
+            <p></p>
+
+          </div>
+          <div class="calc-formset__result">
+            <span class="calc-formset__result-total">0 ₽</span>
+            <span class="calc-formset__result-month"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="calc-formset__price">
+        <div class="calc-formset__price-block">
+          <span class="calc-formset__price-item">Цена за тариф</span>
+          <span class="calc-formset__price-cost">8&nbsp;000 ₽</span>
+        </div>
+        <div class="calc-formset__price-block">
+          <span class="calc-formset__price-item">Цена за услуги</span>
+          <span class="calc-formset__price-options">0 ₽</span>
+        </div>
+        <div class="calc-formset__price-block">
+          <span class="calc-formset__price-total">Итого к оплате</span>
+          <span class="calc-formset__price-result">8&nbsp;000 ₽</span>
+        </div>
+      </div>
+
       <div class="calculate-matriculation__btn">
         <button class="calculate-matriculation__btn-back" type="button">Назад</button>
         <button class="calculate-matriculation__btn-next" type="submit">Далее</button>
