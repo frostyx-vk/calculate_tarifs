@@ -1,15 +1,6 @@
-{% extends "layouts/isle.html" %}
 
-{% load replace_underscore static i18n %}
-
-{% block head_extra %}{{ block.super }}
-{{ form.media }}
 <link rel="stylesheet" type="text/css" href="{% static 'edu/css/calculate_order.css' %}">
-{% endblock %}
 
-{% block head %}Подписка | {{ block.super }}{% endblock %}
-
-{% block content %}
 <div class="calculate-disability__container">
   <div class="calculate-disability__container-title">Подтверждение инвалидности</div>
   <span>Загрузите документ, подтверждающий наличие инвалидности у<br>
@@ -18,19 +9,11 @@
     Проверка документа может занять до нескольких дней.</span>
   <p>Допустимые форматы: jpeg, jpg, png, pdf</p>
   <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
     <div class="calculate-matriculation__btn">
-      {% with object.education_format.format_type as back %}
       <a class="calculate__phone__btn-back" href="{% url 'edu:calculate-user-education-format' back|replace_underscore %}">Назад</a> 
-      {% endwith %}
       <button id="disability-next-btn" class="calculate__phone__btn-hidden" type="submit">Следующий шаг</button>
     </div>
   </form>
 </div>
 
-{% endblock %}
-
-{% block body_extra %}{{ block.super }}
   <script type="text/javascript" src="{% static 'edu/js/disability_docs.js' %}"></script>
-{% endblock %}
