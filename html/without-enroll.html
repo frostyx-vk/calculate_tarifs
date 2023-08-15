@@ -206,7 +206,23 @@
   
         <div class="calculate-matriculation__btn">
           <button class="calculate-matriculation__btn-back" type="button">Назад</button>
-          <button class="calculate-matriculation__btn-next" type="submit">Далее</button>
+          <a id="myBtn">
+            <button id="ready" class="calculate-matriculation__btn-next" type="button">Далее</button>
+          </a>
+        </div>
+
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-title">
+              <p>Благодарим за Ваш выбор!</p>
+              <span class="close">&times;</span>
+            </div>
+            <div class="modal-btn-block">
+              <button class="calculate-matriculation__btn-ready">
+                ok
+              </button>
+            </div>
+          </div>
         </div>
       </div>
   
