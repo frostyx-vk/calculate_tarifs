@@ -212,6 +212,7 @@ closeBtn.onclick = () => {
 }
 cancelModal.onclick = () => {
   modal.style.display = 'none';
+  window.location.href = '../index.html'
 }
 
 window.onclick = (e) => {
