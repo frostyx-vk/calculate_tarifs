@@ -5,7 +5,6 @@ const calcPhoneLink = document.querySelector('.phone-link');
 function intervalForSms() {
   let time = 299;
 
-  // eslint-disable-next-line prefer-const
   let myTimer = setInterval(updateCountdown, 1000);
 
   function updateCountdown() {
@@ -15,7 +14,6 @@ function intervalForSms() {
     countDownEl.innerHTML = `${minutes}:${seconds}`;
     time--;
 
-    // eslint-disable-next-line eqeqeq
     if (minutes == '0' & seconds == '00') {
       calcPhoneText.style.display = 'none';
       calcPhoneLink.style.display = 'block';
