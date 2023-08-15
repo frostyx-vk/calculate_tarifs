@@ -212,7 +212,6 @@ closeBtn.onclick = () => {
 }
 cancelModal.onclick = () => {
   modal.style.display = 'none';
-  window.location.href = '../html/phone_order.html';
 }
 
 window.onclick = (e) => {
