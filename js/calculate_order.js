@@ -197,3 +197,26 @@ for (const input of inputsWithEnroll) {
     calculateTotalPrice();
   });
 };
+
+// модалка
+const modal = document.querySelector('#myModal');
+const btnModal = document.querySelector('#ready');
+const closeBtn = document.querySelector('.close');
+const cancelModal = document.querySelector('.modal-btn-block button');
+
+btnModal.onclick = () => {
+  modal.style.display = 'block';
+}
+closeBtn.onclick = () => {
+  modal.style.display = 'none';
+}
+cancelModal.onclick = () => {
+  modal.style.display = 'none';
+  window.location.href = '../html/phone_order.html';
+}
+
+window.onclick = (e) => {
+  if(e.target === modal){
+    modal.style.display = 'none';
+  }
+}
